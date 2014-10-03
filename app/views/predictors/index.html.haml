@@ -1,0 +1,26 @@
+%h1
+  Quinielas
+
+%table
+  %tr
+    %th Name
+    %th Start at
+    %th End at
+    %th Cost
+    %th
+    %th
+    %th
+    
+  - @predictors.each do |predictor|
+    %tr
+      %td= predictor.name
+      %td= predictor.start_at
+      %td= predictor.end_at
+      %td= predictor.cost
+      %td= link_to 'Show', predictor
+      %td= link_to 'Edit', edit_predictor_path(predictor)
+      %td= link_to 'Destroy', predictor_path(predictor), method: :delete, data: { confirm: t('buttons.confirm') }  
+
+%br
+
+= link_to 'New Predictor', new_predictor_path
