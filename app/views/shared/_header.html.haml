@@ -1,2 +1,12 @@
 %header
-  
+  .row
+    .medium-4.columns
+      .header-container
+        = link_to 'Home', root_path
+    .medium-4.columns
+      .header-container
+        algo
+    .medium-4.columns
+      .header-container
+        .pull-right
+          = link_to t('links.model.new', model: Predictor.model_name.human), new_predictor_path

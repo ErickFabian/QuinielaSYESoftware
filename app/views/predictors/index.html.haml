@@ -1,12 +1,11 @@
-%h1
-  Quinielas
+%h1= Predictor.model_name.human(count: 2)
 
 %table
   %tr
-    %th Name
-    %th Start at
-    %th End at
-    %th Cost
+    %th= Predictor.human_attribute_name(:name)
+    %th= Predictor.human_attribute_name(:start_at)
+    %th= Predictor.human_attribute_name(:end_at)
+    %th= Predictor.human_attribute_name(:cost)
     %th
     %th
     %th
@@ -17,10 +16,9 @@
       %td= predictor.start_at
       %td= predictor.end_at
       %td= predictor.cost
-      %td= link_to 'Show', predictor
-      %td= link_to 'Edit', edit_predictor_path(predictor)
-      %td= link_to 'Destroy', predictor_path(predictor), method: :delete, data: { confirm: t('buttons.confirm') }  
+      %td= link_to t('links.show'), predictor
+      %td= link_to t('links.edit'), edit_predictor_path(predictor)
+      %td= link_to t('links.destroy'), predictor_path(predictor), method: :delete, data: { confirm: t('buttons.confirm') } 
 
 %br
-
-= link_to 'New Predictor', new_predictor_path
+= link_to t('links.model.new', model: Predictor.model_name.human ), new_predictor_path
