@@ -4,6 +4,8 @@ es:
     register: 'Registrarse/Ingresar'
     add_game: 'Agregar Partido'
     remove_game: 'Quitar Partido'
+    sign_up: 'Registrarse'
+    sign_in: 'Ingresar'
     
   activerecord:
     models:

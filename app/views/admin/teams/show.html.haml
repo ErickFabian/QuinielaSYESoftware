@@ -1,8 +1,9 @@
 %h1= Team.model_name.human
 
 %p
-  %b Name:
+  %b= Team.human_attribute_name(:name)
   = @team.name
+  
 = link_to t('links.edit'), edit_admin_team_path(@team)
 \|
 = link_to t('links.back'), admin_teams_path

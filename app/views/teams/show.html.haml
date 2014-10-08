@@ -1,8 +1,7 @@
-%p#notice= notice
+%h1= Team.model_name.human
 
 %p
-  %b Name:
+  %b= Team.human_attribute_name(:name)
   = @team.name
-= link_to t('links.edit'), edit_team_path(@team)
-\|
-= link_to t('links.back'), teams_path
+
+= link_to t('links.back'), root_path

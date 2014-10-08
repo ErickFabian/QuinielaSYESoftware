@@ -6,9 +6,6 @@
     %th= Quiniela.human_attribute_name(:start_at)
     %th= Quiniela.human_attribute_name(:end_at)
     %th= Quiniela.human_attribute_name(:cost)
-    %th
-    %th
-    %th
     
   - @quinielas.each do |quiniela|
     %tr
@@ -16,3 +13,5 @@
       %td= quiniela.start_at
       %td= quiniela.end_at
       %td= quiniela.cost
+
+= link_to t('links.back'), root_path
