@@ -11,15 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141003181435) do
+ActiveRecord::Schema.define(version: 20141008152603) do
 
-  create_table "predictors", force: true do |t|
-    t.datetime "start_at"
-    t.datetime "end_at"
+  create_table "games", force: true do |t|
+    t.string   "local"
+    t.string   "visitor"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "quiniela_id"
+  end
+
+  add_index "games", ["quiniela_id"], name: "index_games_on_quiniela_id"
+
+  create_table "quinielas", force: true do |t|
+    t.string   "name"
+    t.date     "start_at"
+    t.date     "end_at"
     t.integer  "cost"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "teams", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
@@ -35,6 +51,9 @@ ActiveRecord::Schema.define(version: 20141003181435) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username"
+    t.string   "cellphone"
+    t.string   "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

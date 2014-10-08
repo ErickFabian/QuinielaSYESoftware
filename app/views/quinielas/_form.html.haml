@@ -1,0 +1,25 @@
+.row
+  .large-8.columns
+    = form_for @quiniela do |f|
+      .field
+        = f.label :name
+        = f.text_field :name
+      .field
+        = f.label :start_at
+        = f.date_field :start_at
+      .field
+        = f.label :end_at
+        = f.date_field :end_at
+      %hr
+      %h2 Games
+      #games
+        = f.fields_for :games do |game|
+          = render 'game_fields', :f => game
+        .links
+          = link_to_add_association t('app.add_game'), f, :games
+      %hr
+      .field
+        = f.label :cost
+        = f.number_field :cost
+      .actions
+        = f.submit t('links.save')

@@ -7,9 +7,21 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring',        group: :development
-gem 'haml'
-gem 'foundation-rails'
-gem 'devise'
+
+gem 'haml-rails'
+gem 'foundation-rails', '5.4.5.0'
+gem 'devise', '3.3.0'
+gem 'cocoon'
+
+group :development do
+  gem 'spring'
+end
+
+group :test do
+  gem 'shoulda'
+  gem 'shoulda-matchers', require: false
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+end

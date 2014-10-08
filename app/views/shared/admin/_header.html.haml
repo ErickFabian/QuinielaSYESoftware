@@ -1,0 +1,14 @@
+%header
+  .row
+    .medium-3.columns
+      .header-container
+        = link_to t('app.home'), root_path
+    .medium-3.columns
+      .header-container
+        = link_to current_user.username, '#'
+    .medium-3.columns
+      .header-container
+        = link_to Quiniela.model_name.human(count: 2), quinielas_path
+    .medium-3.columns
+      .header-container
+        = link_to Team.model_name.human(count: 2), teams_path

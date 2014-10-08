@@ -1,0 +1,18 @@
+%h1= Team.model_name.human(count: 2)
+
+%table
+  %tr
+    %th= Team.human_attribute_name(:name)
+    %th
+    %th
+    %th
+
+  - @teams.each do |team|
+    %tr
+      %td= team.name
+      %td= link_to t('links.show'), team
+      %td= link_to t('links.edit'), edit_admin_team_path(team)
+      %td= link_to t('links.destroy'), team_path(team), method: :delete, data: { confirm: t('buttons.confirm') } 
+
+%br
+= link_to t('links.model.new', model: Team.model_name.human ), new_admin_team_path

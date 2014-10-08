@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   def show
-    @quiniela = Predictor.first
+    @quiniela = Quiniela.first
+    @users = User.all
   end 
+
 end

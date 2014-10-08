@@ -1,12 +1,14 @@
 %header
   .row
-    .medium-4.columns
+    .medium-3.columns
       .header-container
-        = link_to 'Home', root_path
-    .medium-4.columns
+        = link_to t('app.home'), root_path
+    .medium-3.columns
       .header-container
-        = link_to 'Registrarse', new_user_session_path
-    .medium-4.columns
+        = link_to t('app.register'), new_user_session_path
+    .medium-3.columns
       .header-container
-        .pull-right
-          = link_to t('links.model.new', model: Predictor.model_name.human), new_predictor_path
+        = link_to Quiniela.model_name.human(count: 2), quinielas_path
+    .medium-3.columns
+      .header-container
+        = link_to Team.model_name.human(count: 2), teams_path

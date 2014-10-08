@@ -1,0 +1,8 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @team.name
+= link_to t('links.edit'), edit_team_path(@team)
+\|
+= link_to t('links.back'), teams_path

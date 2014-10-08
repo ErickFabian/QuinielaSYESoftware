@@ -1,0 +1,8 @@
+.nested-fields
+  .field
+    = f.label :local
+    = f.collection_select(:local, Team.all, :name, :name)
+  .field
+    = f.label :visitor
+    = f.collection_select(:visitor, Team.all, :name, :name)
+  = link_to_remove_association t('app.remove_game'), f

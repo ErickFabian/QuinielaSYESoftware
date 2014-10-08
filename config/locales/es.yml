@@ -1,16 +1,42 @@
 es:
+  app:
+    home: 'Home'
+    register: 'Registrarse/Ingresar'
+    add_game: 'Agregar Partido'
+    remove_game: 'Quitar Partido'
+    
   activerecord:
     models:
-      predictor:
+      quiniela:
         one: 'Quiniela'
         other: 'Quinielas'
+      user:
+        one: 'Usuario'
+        other: 'Usuarios'
+      game:
+        one: 'Partido'
+        other: 'Partidos'
+      team: 
+        one: 'Equipo'
+        other: 'Equipos'
 
     attributes:
-      predictor:
+      quiniela:
         name: 'Nombre'
         start_at: 'Fecha de Inicio'
         end_at: 'Fecha de Fin'
         cost: 'Costo'
+      user:
+        username: 'Nombre'
+        cellphone: 'Celular'
+        email: 'E-mail'
+      game:
+        local: 'Local'
+        visitor: 'Visitante'
+        date: 'Fecha'
+      team:
+        name: 'Nombre'
+        league: 'Liga'
 
   buttons:
     save: 'Guardar %{model}'
@@ -22,6 +48,7 @@ es:
     edit: 'Editar'
     show: 'Mostrar' 
     destroy: 'Eliminar'
+    save: 'Guardar'
     model:
       new: 'Nuevo %{model}'
       back: 'Regreso a %{model}'

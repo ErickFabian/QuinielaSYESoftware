@@ -1,13 +1,14 @@
 .row
   .medium-12
-    %h1= Predictor.model_name.human(count: 2)
-    %table
-      %tr
-        %th= Predictor.human_attribute_name(:name)
-        %th= Predictor.human_attribute_name(:start_at)
-        %th= Predictor.human_attribute_name(:end_at)
-        %th= Predictor.human_attribute_name(:cost)
-      %td= @quiniela.name
-      %td= @quiniela.start_at
-      %td= @quiniela.end_at
-      %td= @quiniela.cost
+    %h1= Quiniela.model_name.human(count: 2)
+    - if @quiniela
+      %table
+        %tr
+          %th= Quiniela.human_attribute_name(:name)
+          %th= Quiniela.human_attribute_name(:start_at)
+          %th= Quiniela.human_attribute_name(:end_at)
+          %th= Quiniela.human_attribute_name(:cost)
+        %td= @quiniela.name
+        %td= @quiniela.start_at
+        %td= @quiniela.end_at
+        %td= @quiniela.cost
