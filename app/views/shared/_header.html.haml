@@ -1,14 +1,8 @@
 %header
   .row
-    .medium-3.columns
-      .header-container
-        = link_to t('app.home'), root_path
-    .medium-3.columns
-      .header-container
-        = link_to t('app.register'), new_user_session_path
-    .medium-3.columns
-      .header-container
-        = link_to Quiniela.model_name.human(count: 2), quinielas_path
-    .medium-3.columns
-      .header-container
-        = link_to Team.model_name.human(count: 2), teams_path
+    .medium-12.columns
+      .header-container        
+        -if current_user.present?
+          = link_to current_user.username, destroy_user_session_path , method: :delete
+        -else
+          = link_to t('app.register'), new_user_session_path

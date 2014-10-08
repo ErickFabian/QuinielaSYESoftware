@@ -1,0 +1,7 @@
+%h1= Team.model_name.human
+
+= render 'form'
+
+= link_to t('links.show'), [:admin, @team]
+\|
+= link_to t('links.back'), admin_teams_path

@@ -16,9 +16,3 @@
       %td= quiniela.start_at
       %td= quiniela.end_at
       %td= quiniela.cost
-      %td= link_to t('links.show'), quiniela
-      %td= link_to t('links.edit'), edit_quiniela_path(quiniela)
-      %td= link_to t('links.destroy'), quiniela_path(quiniela), method: :delete, data: { confirm: t('buttons.confirm') } 
-
-%br
-= link_to t('links.model.new', model: Quiniela.model_name.human ), new_quiniela_path

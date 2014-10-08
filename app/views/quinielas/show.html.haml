@@ -1,5 +1,4 @@
-%p#notice= notice
-
+%h1= Quiniela.model_name.human
 %p
   %b= Quiniela.human_attribute_name(:name)
   = @quiniela.name
@@ -27,6 +26,3 @@
       %td= game.visitor
       %br
 %br
-= link_to t('links.edit'), edit_quiniela_path(@quiniela)
-\|
-= link_to t('links.back'), quinielas_path

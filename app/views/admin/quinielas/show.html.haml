@@ -1,1 +1,32 @@
-%h1 Show
+%h1= Quiniela.model_name.human
+
+%p
+  %b= Quiniela.human_attribute_name(:name)
+  = @quiniela.name
+%p
+  %b= Quiniela.human_attribute_name(:start_at)
+  = @quiniela.start_at
+%p
+  %b= Quiniela.human_attribute_name(:end_at)
+  = @quiniela.end_at
+%p
+  %b= Quiniela.human_attribute_name(:cost)
+  = @quiniela.cost
+
+%h1= Game.model_name.human(count: 2)
+  
+%table
+  %tr
+    %th Local
+    %th
+    %th Visitante
+  - @quiniela.games.each do |game|
+    %tr
+      %td= game.local
+      %td= 'VS'
+      %td= game.visitor
+      %br
+%br
+= link_to t('links.edit'), edit_admin_quiniela_path(@quiniela)
+\|
+= link_to t('links.back'), admin_quinielas_path
