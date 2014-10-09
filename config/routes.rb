@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'quinielas#index'
-    resources :teams, :games, :quinielas
+    resources :teams
+    resources :games
+    resources :quinielas
   end
 
   resources :teams, only: [:index, :show]

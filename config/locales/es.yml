@@ -6,6 +6,7 @@ es:
     remove_game: 'Quitar Partido'
     sign_up: 'Registrarse'
     sign_in: 'Ingresar'
+    forgot_pw: 'Olvidaste tu contraseña?'
     
   activerecord:
     models:

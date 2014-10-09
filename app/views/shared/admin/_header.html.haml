@@ -5,10 +5,10 @@
         = link_to t('app.home'), root_path
     .medium-3.columns
       .header-container
-        = link_to current_user.username, destroy_user_session_path , method: :delete
-    .medium-3.columns
-      .header-container
         = link_to Quiniela.model_name.human(count: 2), admin_quinielas_path
     .medium-3.columns
       .header-container
         = link_to Team.model_name.human(count: 2), admin_teams_path
+    .medium-3.columns
+      .header-container
+        = link_to current_user.username, destroy_user_session_path , method: :delete

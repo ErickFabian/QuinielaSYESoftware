@@ -3,8 +3,8 @@
     .medium-12.columns
       .header-container        
         -if current_user.present?
-          = link_to current_user.username, destroy_user_session_path , method: :delete
           = link_to Quiniela.model_name.human(count: 2), quinielas_path
           = link_to Team.model_name.human(count: 2), teams_path
+          = link_to current_user.username, destroy_user_session_path , method: :delete
         -else
           = link_to t('app.register'), new_user_session_path

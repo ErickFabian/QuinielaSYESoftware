@@ -19,7 +19,7 @@ class Admin::QuinielasController < Admin::BaseController
     @quiniela = Quiniela.new(quiniela_params)
 
     if @quiniela.save
-      redirect_to @quiniela, notice: 'Quiniela was successfully created.'
+      redirect_to [:admin, @quiniela], notice: 'Quiniela was successfully created.'
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Admin::QuinielasController < Admin::BaseController
 
   def update
     if @quiniela.update(quiniela_params)
-      redirect_to @quiniela, notice: 'Quiniela was successfully updated.'
+      redirect_to [:admin, @quiniela], notice: 'Quiniela was successfully updated.'
     else
       render :edit
     end
@@ -35,16 +35,15 @@ class Admin::QuinielasController < Admin::BaseController
 
   def destroy
     @quiniela.destroy
-    redirect_to quinielas_url, notice: 'Quiniela was successfully destroyed.'
+    redirect_to admin_quinielas_url, notice: 'Quiniela was successfully destroyed.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_quiniela
       @quiniela = Quiniela.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
     def quiniela_params
       params.require(:quiniela).permit(:name,
        :start_at,
