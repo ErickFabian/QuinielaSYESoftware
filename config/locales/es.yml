@@ -7,6 +7,8 @@ es:
     sign_up: 'Registrarse'
     sign_in: 'Ingresar'
     forgot_pw: 'Olvidaste tu contraseña?'
+    show: 'Ver detalles'
+    registered_users: 'Usuarios Registrados'
     
   activerecord:
     models:

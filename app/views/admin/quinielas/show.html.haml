@@ -26,6 +26,12 @@
       %td= 'VS'
       %td= game.visitor
       %br
+
+%h1= t('app.registered_users')
+- @quiniela.users.each do |user|
+  = user.username
+  %br
+
 %br
 = link_to t('links.edit'), edit_admin_quiniela_path(@quiniela)
 \|

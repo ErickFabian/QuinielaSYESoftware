@@ -6,6 +6,8 @@
     %th= Quiniela.human_attribute_name(:start_at)
     %th= Quiniela.human_attribute_name(:end_at)
     %th= Quiniela.human_attribute_name(:cost)
+    %th= t('app.show')
+    %th= t('app.sign_up')
     
   - @quinielas.each do |quiniela|
     %tr
@@ -13,5 +15,7 @@
       %td= quiniela.start_at
       %td= quiniela.end_at
       %td= quiniela.cost
+      %td= link_to t('links.show'), quiniela
+      %td= link_to t('app.sign_up'), edit_quiniela_path(quiniela)
 
 = link_to t('links.back'), root_path

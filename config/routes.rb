@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   end
 
   resources :teams, only: [:index, :show]
-  resources :quinielas, only: [:index, :show]
+  resources :quinielas, only: [:index, :show, :edit, :update]
 end
