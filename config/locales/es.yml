@@ -9,6 +9,7 @@ es:
     forgot_pw: 'Olvidaste tu contraseña?'
     show: 'Ver detalles'
     registered_users: 'Usuarios Registrados'
+    registered: 'Ya registrado'
     
   activerecord:
     models:

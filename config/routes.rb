@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   resources :teams, only: [:index, :show]
   resources :choices
   resources :quinielas, only: [:index, :show, :suscribe] do
-      post :suscribe
+      post :suscribe, :unsuscribe
   end
 end

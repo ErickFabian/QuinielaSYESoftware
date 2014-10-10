@@ -16,6 +16,9 @@
       %td= quiniela.end_at
       %td= quiniela.cost
       %td= link_to t('links.show'), quiniela
-      %td= link_to t('app.sign_up'), quiniela_suscribe_path(quiniela) ,method: :post
+      -if not suscribed? quiniela
+        %td= link_to t('app.sign_up'), quiniela_suscribe_path(quiniela) ,method: :post
+      -else
+        %td= link_to t('app.registered'), quiniela_unsuscribe_path(quiniela) ,method: :post
 
-= link_to t('links.back'), root_path
+= link_to t('links.back'), quinielas_path

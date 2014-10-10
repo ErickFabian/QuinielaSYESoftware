@@ -21,5 +21,7 @@
       .field
         = f.label :cost
         = f.number_field :cost
+      .fields
+        = f.collection_check_boxes(:user_ids, User.all, :id, :username)
       .actions
         = f.submit t('links.save')

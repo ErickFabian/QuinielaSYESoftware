@@ -49,7 +49,7 @@ class Admin::QuinielasController < Admin::BaseController
        :start_at,
        :end_at,
        :cost,
-       users_id: [],
+       user_ids: [],
        games_attributes: [:id, :local, :visitor, :result])
     end
 end
