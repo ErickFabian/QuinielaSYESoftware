@@ -39,6 +39,7 @@ es:
         local: 'Local'
         visitor: 'Visitante'
         date: 'Fecha'
+        result: 'Resultado'
       team:
         name: 'Nombre'
         league: 'Liga'

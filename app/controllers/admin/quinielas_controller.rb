@@ -50,6 +50,6 @@ class Admin::QuinielasController < Admin::BaseController
        :end_at,
        :cost,
        users_id: [],
-       games_attributes: [:id, :local, :visitor])
+       games_attributes: [:id, :local, :visitor, :result])
     end
 end
