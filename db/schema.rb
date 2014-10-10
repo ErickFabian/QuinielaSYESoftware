@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141009161841) do
+ActiveRecord::Schema.define(version: 20141010165354) do
+
+  create_table "choices", force: true do |t|
+    t.integer "user_id"
+    t.integer "game_id"
+    t.integer "result_cd"
+  end
 
   create_table "games", force: true do |t|
     t.string   "local"
@@ -19,6 +25,7 @@ ActiveRecord::Schema.define(version: 20141009161841) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "quiniela_id"
+    t.string   "result"
   end
 
   add_index "games", ["quiniela_id"], name: "index_games_on_quiniela_id"

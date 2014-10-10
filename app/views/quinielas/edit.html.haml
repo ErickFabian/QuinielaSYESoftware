@@ -18,7 +18,18 @@
 %h1= t('app.sign_up')
 
 = form_for @quiniela do |f|
+  = f.fields_for :choices do |game|
+    .field
+      = game.label :local
+      = game.check_box :local
+    .field
+      = game.label :draw
+      = game.check_box :draw
+    .field
+      = game.label :visitor
+      = game.check_box :visitor
   .fields
     = f.collection_check_boxes(:user_ids, User.all, :id, :username)
   .actions
     = f.submit t('links.save')
+
