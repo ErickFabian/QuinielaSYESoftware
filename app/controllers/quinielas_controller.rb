@@ -8,17 +8,17 @@ class QuinielasController < ApplicationController
   def show
   end
 
-  def edit
-  end
-
-  def update
-    if @quiniela.update(quiniela_params)
-      redirect_to @quiniela , notice: 'Quiniela was successfully updated.'
-    else
-      render :edit
+  def suscribe
+    @quiniela = Quiniela.find(params[:quiniela_id])
+    if @quiniela
+      @quiniela.users << current_user unless suscribed? @quiniela
     end
+    redirect_to quinielas_path
   end
 
+  def suscribed? quiniela
+    true if quiniela.users.include?(current_user)
+  end
   private
 
     def set_quiniela
