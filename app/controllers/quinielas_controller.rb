@@ -13,7 +13,7 @@ class QuinielasController < ApplicationController
 
   def update
     if @quiniela.update(quiniela_params)
-      redirect_to [:admin, @quiniela], notice: 'Quiniela was successfully updated.'
+      redirect_to @quiniela , notice: 'Quiniela was successfully updated.'
     else
       render :edit
     end
@@ -30,7 +30,7 @@ class QuinielasController < ApplicationController
        :start_at,
        :end_at,
        :cost,
-       users_id: [],
+       user_ids: [],
        games_attributes: [:id, :local, :visitor])
     end
 
