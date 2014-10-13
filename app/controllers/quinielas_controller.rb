@@ -1,5 +1,4 @@
 class QuinielasController < ApplicationController
-
   before_action :set_quiniela, only: [:show, :edit, :update, :destroy, :suscribe, :unsuscribe]
   
   def index
@@ -10,8 +9,8 @@ class QuinielasController < ApplicationController
   end
 
   def suscribe
-    if @quiniela
-      @quiniela.users << current_user if @quiniela.unsuscribed? current_user
+    if @quiniela.unsuscribed?(current_user)
+      @quiniela.users << current_user
     end
     redirect_to quinielas_path
   end
@@ -28,12 +27,13 @@ class QuinielasController < ApplicationController
     end
 
     def quiniela_params
-      params.require(:quiniela).permit(:name,
-       :start_at,
-       :end_at,
-       :cost,
-       user_ids: [],
-       games_attributes: [:id, :local_id, :visitor_id])
+      params.require(:quiniela).permit(
+        :name,
+        :start_at,
+        :end_at,
+        :cost,
+        user_ids: [],
+        games_attributes: [:id, :local_id, :visitor_id])
     end
 
 end

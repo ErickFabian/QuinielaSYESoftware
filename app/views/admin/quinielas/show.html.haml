@@ -17,14 +17,14 @@
   
 %table
   %tr
-    %th= Game.human_attribute_name(:local)
+    %th= Game.human_attribute_name(:local_id)
     %th
-    %th= Game.human_attribute_name(:visitor)
+    %th= Game.human_attribute_name(:visitor_id)
     %th= Game.human_attribute_name(:result)
   - @quiniela.games.each do |game|
     %tr
       %td= game.local_name
-      %td= 'VS'
+      %td= t('app.versus')
       %td= game.visitor_name
       %td= game.result
       %br

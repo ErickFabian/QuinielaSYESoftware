@@ -14,7 +14,7 @@
       %h2= Game.model_name.human(count: 2)
       #games
         = f.fields_for :games do |game|
-          = render 'game_fields', :f => game
+          = render 'game_fields', f: game
         .links
           = link_to_add_association t('app.add_game'), f, :games
       %hr
