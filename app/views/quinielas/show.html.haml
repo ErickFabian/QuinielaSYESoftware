@@ -22,9 +22,9 @@
     %th= Game.human_attribute_name(:result)
   - @quiniela.games.each do |game|
     %tr
-      %td= game.local
+      %td= game.local_name
       %td= 'VS'
-      %td= game.visitor
+      %td= game.visitor_name
       %td= game.result
 
 %h1= t('app.registered_users')

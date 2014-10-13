@@ -1,12 +1,11 @@
 .nested-fields
   .field
-    = f.label :local
-    = f.collection_select(:local, Team.all, :name, :name)
+    = f.label :local_id
+    = f.collection_select(:local_id, Team.all, :id, :name)
   .field
-    = f.label :visitor
-    = f.collection_select(:visitor, Team.all, :name, :name)
+    = f.label :visitor_id
+    = f.collection_select(:visitor_id, Team.all, :id, :name)
   .field
     = f.label :result
-    -#translate_enum(Game, :result)
     = f.select :result, enum_option_pairs(Game, :result)
   = link_to_remove_association t('app.remove_game'), f
