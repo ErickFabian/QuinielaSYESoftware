@@ -11,12 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141010165354) do
+ActiveRecord::Schema.define(version: 20141013150805) do
 
   create_table "choices", force: true do |t|
-    t.integer "user_id"
-    t.integer "game_id"
-    t.integer "result_cd"
+    t.integer  "user_id"
+    t.integer  "game_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "result_cd"
   end
 
   create_table "games", force: true do |t|
@@ -24,6 +26,7 @@ ActiveRecord::Schema.define(version: 20141010165354) do
     t.string   "visitor"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "date"
     t.integer  "quiniela_id"
     t.string   "result"
   end

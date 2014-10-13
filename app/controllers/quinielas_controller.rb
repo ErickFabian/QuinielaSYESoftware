@@ -1,8 +1,7 @@
 class QuinielasController < ApplicationController
-  helper_method :suscribed?
+
+  before_action :set_quiniela, only: [:show, :edit, :update, :destroy, :suscribe, :unsuscribe]
   
-  before_action :set_quiniela, only: [:show, :edit, :update, :destroy]
-  before_action :set_suscriber, only: [:suscribe, :unsuscribe]
   def index
     @quinielas = Quiniela.all
   end
@@ -12,7 +11,7 @@ class QuinielasController < ApplicationController
 
   def suscribe
     if @quiniela
-      @quiniela.users << current_user unless suscribed? @quiniela
+      @quiniela.users << current_user if @quiniela.unsuscribed? current_user
     end
     redirect_to quinielas_path
   end
@@ -22,15 +21,7 @@ class QuinielasController < ApplicationController
     redirect_to quinielas_path
   end
 
-  def suscribed? quiniela
-    true if quiniela.users.include?(current_user)
-  end
-
   private
-
-    def set_suscriber
-      @quiniela = Quiniela.find(params[:quiniela_id])
-    end
 
     def set_quiniela
       @quiniela = Quiniela.find(params[:id])

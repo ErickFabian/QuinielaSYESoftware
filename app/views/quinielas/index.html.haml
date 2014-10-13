@@ -8,7 +8,8 @@
     %th= Quiniela.human_attribute_name(:cost)
     %th= t('app.show')
     %th= t('app.sign_up')
-    
+    %th= t('app.choices')
+
   - @quinielas.each do |quiniela|
     %tr
       %td= quiniela.name
@@ -16,9 +17,12 @@
       %td= quiniela.end_at
       %td= quiniela.cost
       %td= link_to t('links.show'), quiniela
-      -if not suscribed? quiniela
-        %td= link_to t('app.sign_up'), quiniela_suscribe_path(quiniela) ,method: :post
+      -if quiniela.unsuscribed?(current_user)
+        %td= link_to t('app.sign_up'), suscribe_quiniela_path(quiniela) ,method: :post
       -else
-        %td= link_to t('app.registered'), quiniela_unsuscribe_path(quiniela) ,method: :post
+        %td= link_to t('app.registered'), unsuscribe_quiniela_path(quiniela) ,method: :post
+        
+
+
 
 = link_to t('links.back'), quinielas_path

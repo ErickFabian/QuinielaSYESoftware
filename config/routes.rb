@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :choices
+
   root 'home#show'
   devise_for :users
 
@@ -8,10 +10,10 @@ Rails.application.routes.draw do
     resources :games
     resources :quinielas
   end
-
-  resources :teams, only: [:index, :show]
-  resources :choices
+  
   resources :quinielas, only: [:index, :show, :suscribe] do
-      post :suscribe, :unsuscribe
+      member do 
+        post :suscribe, :unsuscribe
+        end
   end
 end

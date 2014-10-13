@@ -10,6 +10,7 @@ es:
     show: 'Ver detalles'
     registered_users: 'Usuarios Registrados'
     registered: 'Ya registrado'
+    choices: 'Contestar Quiniela'
     
   activerecord:
     models:
@@ -25,6 +26,9 @@ es:
       team: 
         one: 'Equipo'
         other: 'Equipos'
+      choices:
+        one: 'Eleccion'
+        two: 'Mis elecciones'
 
     attributes:
       quiniela:

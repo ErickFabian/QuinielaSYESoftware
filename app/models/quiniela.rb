@@ -7,4 +7,12 @@ class Quiniela < ActiveRecord::Base
 
   accepts_nested_attributes_for :games, allow_destroy: true
   accepts_nested_attributes_for :users, allow_destroy: true
+
+  def suscribed?(user)
+    users.include?(user)
+  end
+
+  def unsuscribed?(user)
+    !suscribed?(user)
+  end
 end
