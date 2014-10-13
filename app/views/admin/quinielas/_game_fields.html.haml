@@ -7,5 +7,5 @@
     = f.collection_select(:visitor, Team.all, :name, :name)
   .field
     = f.label :result
-    = f.select(:result, options_for_select([:nil, :empate, :local, :visitante]))
+    = f.select :result, enum_option_pairs(Game, :result)
   = link_to_remove_association t('app.remove_game'), f

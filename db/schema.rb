@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20141013150805) do
     t.datetime "updated_at"
     t.date     "date"
     t.integer  "quiniela_id"
-    t.string   "result"
+    t.integer  "result_cd"
   end
 
   add_index "games", ["quiniela_id"], name: "index_games_on_quiniela_id"

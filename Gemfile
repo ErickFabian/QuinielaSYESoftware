@@ -18,11 +18,7 @@ group :development do
   gem 'spring'
 end
 
-group :test do
-  gem 'shoulda'
-  gem 'shoulda-matchers', require: false
-end
-
 group :development, :test do
   gem 'rspec-rails'
+  gem 'shoulda-matchers', require: false
 end
