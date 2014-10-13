@@ -7,6 +7,6 @@
           %li= msg
   .field
     = f.label :result
-    = f.select(:result, options_for_select([:nil, :empate, :local, :visitante]))
+    = f.select :result, enum_option_pairs(Game, :result)
   .actions
     = f.submit t('links.save')

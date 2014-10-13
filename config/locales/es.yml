@@ -9,8 +9,9 @@ es:
     forgot_pw: 'Olvidaste tu contraseña?'
     show: 'Ver detalles'
     registered_users: 'Usuarios Registrados'
-    registered: 'Ya registrado'
+    registered: 'Dar de baja'
     choices: 'Contestar Quiniela'
+    
   draw: 'Empate'
   local: 'Local'
   visitor: 'Visitante'
