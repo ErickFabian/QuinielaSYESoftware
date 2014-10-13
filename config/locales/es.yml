@@ -11,8 +11,8 @@ es:
     registered_users: 'Usuarios Registrados'
     registered: 'Ya registrado'
     choices: 'Contestar Quiniela'
-  result: 'Resultado'
   draw: 'Empate'
+  local: 'Local'
   visitor: 'Visitante'
 
   activerecord:

@@ -7,5 +7,6 @@
     = f.collection_select(:visitor, Team.all, :name, :name)
   .field
     = f.label :result
+    -#translate_enum(Game, :result)
     = f.select :result, enum_option_pairs(Game, :result)
   = link_to_remove_association t('app.remove_game'), f
