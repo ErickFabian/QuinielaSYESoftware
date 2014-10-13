@@ -33,7 +33,7 @@ class QuinielasController < ApplicationController
        :end_at,
        :cost,
        user_ids: [],
-       games_attributes: [:id, :local, :visitor])
+       games_attributes: [:id, :local_id, :visitor_id])
     end
 
 end

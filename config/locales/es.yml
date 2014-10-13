@@ -11,7 +11,13 @@ es:
     registered_users: 'Usuarios Registrados'
     registered: 'Ya registrado'
     choices: 'Contestar Quiniela'
-    
+
+  enums:
+    result:
+      draw: 'Empate'
+      local: 'Local'
+      visitor: 'Visitante'
+
   activerecord:
     models:
       quiniela:
@@ -29,6 +35,7 @@ es:
       choices:
         one: 'Eleccion'
         two: 'Mis elecciones'
+
 
     attributes:
       quiniela:

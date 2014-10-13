@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141013150805) do
+ActiveRecord::Schema.define(version: 20141013175747) do
 
   create_table "choices", force: true do |t|
     t.integer  "user_id"
@@ -22,13 +22,13 @@ ActiveRecord::Schema.define(version: 20141013150805) do
   end
 
   create_table "games", force: true do |t|
-    t.string   "local"
-    t.string   "visitor"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "date"
     t.integer  "quiniela_id"
-    t.string   "result"
+    t.integer  "result_cd"
+    t.integer  "local_id"
+    t.integer  "visitor_id"
   end
 
   add_index "games", ["quiniela_id"], name: "index_games_on_quiniela_id"

@@ -17,6 +17,7 @@ class Admin::QuinielasController < Admin::BaseController
 
   def create
     @quiniela = Quiniela.new(quiniela_params)
+    puts quiniela_params.inspect
 
     if @quiniela.save
       redirect_to [:admin, @quiniela], notice: 'Quiniela was successfully created.'
@@ -50,6 +51,6 @@ class Admin::QuinielasController < Admin::BaseController
        :end_at,
        :cost,
        user_ids: [],
-       games_attributes: [:id, :local, :visitor, :result])
+       games_attributes: [:id, :local_id, :visitor_id, :result])
     end
 end
