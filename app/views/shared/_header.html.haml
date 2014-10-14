@@ -1,10 +1,20 @@
 %header
-  .row
-    .medium-12.columns
-      .header-container        
+  %nav.top-bar{"data-topbar" => "", :role => "navigation"}
+    %ul.title-area
+      %li.name
+        %h1
+          = link_to t('app.name'), 'http://syesoftware.com'
+    %section.top-bar-section
+      %ul.right
         -if current_user.present?
-          = link_to Quiniela.model_name.human(count: 2), quinielas_path
-          = link_to current_user.username, destroy_user_session_path , method: :delete
-          = link_to t('app.choices'), new_choice_path
+          %li
+            = link_to Quiniela.model_name.human(count: 2), quinielas_path
+          %li.divider
+          %li.has-dropdown.header-text
+            = current_user.username
+            %ul.dropdown
+              %li.active
+                = link_to t('app.log_out'), destroy_user_session_path , method: :delete
         -else
-          = link_to t('app.register'), new_user_session_path
+          %li.active
+            = link_to t('app.register'), new_user_session_path
