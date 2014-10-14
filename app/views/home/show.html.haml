@@ -1,14 +1,45 @@
+%h1= Quiniela.model_name.human(count: 2)
 .row
-  .medium-12
-    %h1= Quiniela.model_name.human(count: 2)
-    - if @quiniela
-      %table
-        %tr
-          %th= Quiniela.human_attribute_name(:name)
-          %th= Quiniela.human_attribute_name(:start_at)
-          %th= Quiniela.human_attribute_name(:end_at)
-          %th= Quiniela.human_attribute_name(:cost)
-        %td= @quiniela.name
-        %td= @quiniela.start_at
-        %td= @quiniela.end_at
-        %td= @quiniela.cost
+  %fieldset
+    %legend
+      = t('app.user_quinielas')
+    -if @user_quinielas
+      -@user_quinielas.each do |quiniela|
+        .large-3.columns
+          %p
+            %b= Quiniela.human_attribute_name(:name)
+            = quiniela.name
+        .large-3.columns
+          %p
+            %b= Quiniela.human_attribute_name(:start_at)
+            = quiniela.start_at
+        .large-3.columns  
+          %p
+            %b= Quiniela.human_attribute_name(:end_at)
+            = quiniela.end_at
+        .large-3.columns
+          %p
+            %b= Quiniela.human_attribute_name(:cost)
+            = quiniela.cost
+.row
+  %fieldset
+    %legend
+      = t('app.current')
+    -if @current
+      -@current.each do |current|
+        .large-3.columns
+          %p
+            %b= Quiniela.human_attribute_name(:name)
+            = current.name
+        .large-3.columns
+          %p
+            %b= Quiniela.human_attribute_name(:start_at)
+            = current.start_at
+        .large-3.columns  
+          %p
+            %b= Quiniela.human_attribute_name(:end_at)
+            = current.end_at
+        .large-3.columns
+          %p
+            %b= Quiniela.human_attribute_name(:cost)
+            = current.cost

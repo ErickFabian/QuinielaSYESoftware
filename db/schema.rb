@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20141014181052) do
   create_table "games", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.date     "date"
     t.integer  "quiniela_id"
     t.integer  "result_cd"
     t.integer  "local_id"

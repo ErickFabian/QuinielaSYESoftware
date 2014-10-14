@@ -1,6 +1,6 @@
 es:
   app:
-    home: 'Home'
+    home: 'Inicio'
     register: 'Registrarse/Ingresar'
     log_out: 'Salir'
     add_game: 'Agregar Partido'
@@ -16,6 +16,8 @@ es:
     versus: 'Versus'
     games_info: 'Informacion de los partidos'
     quiniela_info: 'Informacion de la quiniela'
+    current: 'Quinielas Proximas a empezar'
+    user_quinielas: 'Mis quinielas'
 
   enums:
     result:
