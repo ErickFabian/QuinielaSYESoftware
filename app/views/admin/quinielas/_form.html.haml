@@ -24,8 +24,5 @@
     = f.fields_for :games do |game|
       = render 'game_fields', f: game
   %hr
-  -#.field
-  -#.fields
-  -#  = f.collection_check_boxes(:user_ids, User.all, :id, :email)
-  .button.radius.round
-    = f.submit t('links.save')
+  .button-wrapper
+    = f.submit t('links.save'), class: 'button radius round'

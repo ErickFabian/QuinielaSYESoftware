@@ -1,7 +1,7 @@
 %h1= Quiniela.model_name.human
 
 = render 'form'
-
-= link_to t('links.show'), [:admin, @quiniela]
-\|
-= link_to t('links.back'), admin_quinielas_path
+.button.radius.round
+  = link_to t('links.show'), [:admin, @quiniela]
+.button.radius.round
+  = link_to t('links.back'), admin_quinielas_path

@@ -9,8 +9,9 @@
       .large-4.columns
         = f.label :visitor_id
         = f.collection_select(:visitor_id, Team.all, :id, :name)
-      .large-4.columns
+      .large-3.columns
         = f.label :result
         = f.select :result, enum_option_pairs(Game, :result)
-  .button.radius.round
-    = link_to_remove_association t('app.remove_game'), f
+      .large-1.columns
+        .button.small
+          = link_to_remove_association t('app.remove_game'), f
