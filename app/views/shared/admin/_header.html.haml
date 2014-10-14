@@ -7,6 +7,9 @@
             -#= image_tag 'logo.png'
             = t('app.name')
     %section.top-bar-section
+      %ul.left
+        %li.active
+          = link_to t('app.home'), root_path
       %ul.right
         -if current_user.present?
           %li
