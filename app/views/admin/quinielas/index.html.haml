@@ -1,14 +1,14 @@
 %h1= Quiniela.model_name.human(count: 2)
-
+%hr
 %table
   %tr
     %th= Quiniela.human_attribute_name(:name)
     %th= Quiniela.human_attribute_name(:start_at)
     %th= Quiniela.human_attribute_name(:end_at)
     %th= Quiniela.human_attribute_name(:cost)
-    %th
-    %th
-    %th
+    %th= t('links.show')
+    %th= t('links.edit')
+    %th= t('links.edit')
     
   - @quinielas.each do |quiniela|
     %tr
@@ -21,4 +21,6 @@
       %td= link_to t('links.destroy'), admin_quiniela_path(quiniela), method: :delete, data: { confirm: t('buttons.confirm') } 
 
 %br
-= link_to t('links.model.new', model: Quiniela.model_name.human ), new_admin_quiniela_path
+%hr
+.button.radius.round
+  = link_to t('links.model.new', model: Quiniela.model_name.human ), new_admin_quiniela_path

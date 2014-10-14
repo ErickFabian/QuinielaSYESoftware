@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  validates :username, :role, presence: true
-
   has_many :choices
   has_and_belongs_to_many :quinielas
 

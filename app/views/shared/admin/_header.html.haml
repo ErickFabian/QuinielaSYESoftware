@@ -1,14 +1,23 @@
 %header
-  .row
-    .medium-3.columns
-      .header-container
-        = link_to t('app.home'), root_path
-    .medium-3.columns
-      .header-container
-        = link_to Quiniela.model_name.human(count: 2), admin_quinielas_path
-    .medium-3.columns
-      .header-container
-        = link_to Team.model_name.human(count: 2), admin_teams_path
-    .medium-3.columns
-      .header-container
-        = link_to current_user.username, destroy_user_session_path , method: :delete
+  %nav.top-bar{"data-topbar" => "", :role => "navigation"}
+    %ul.title-area
+      %li.name
+        %h1
+          = link_to t('app.name'), 'http://syesoftware.com'
+    %section.top-bar-section
+      %ul.right
+        -if current_user.present?
+          %li
+            = link_to Quiniela.model_name.human(count: 2), admin_quinielas_path
+          %li.divider
+          %li
+            = link_to Team.model_name.human(count: 2), admin_teams_path
+          %li.divider
+          %li.has-dropdown.header-text
+            = current_user.email
+            %ul.dropdown
+              %li.active
+                = link_to t('app.log_out'), destroy_user_session_path , method: :delete
+        -else
+          %li.active
+            = link_to t('app.register'), new_user_session_path

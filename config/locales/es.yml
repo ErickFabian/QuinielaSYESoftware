@@ -14,7 +14,8 @@ es:
     choices: 'Contestar Quiniela'
     name: 'Quiniela SYE'
     versus: 'Versus'
-    
+    games_info: 'Informacion de los partidos'
+    quiniela_info: 'Informacion de la quiniela'
   enums:
     result:
       draw: 'Empate'
@@ -51,8 +52,8 @@ es:
         cellphone: 'Celular'
         email: 'E-mail'
       game:
-        local: 'Local'
-        visitor: 'Visitante'
+        local_id: 'Local'
+        visitor_id: 'Visitante'
         date: 'Fecha'
         result: 'Resultado'
       team:

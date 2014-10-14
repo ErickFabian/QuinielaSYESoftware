@@ -1,5 +1,5 @@
 %h1= Quiniela.model_name.human(count: 2)
-
+%hr
 %table
   %tr
     %th= Quiniela.human_attribute_name(:name)
@@ -21,5 +21,6 @@
         %td= link_to t('app.sign_up'), suscribe_quiniela_path(quiniela) ,method: :post
       -else
         %td= link_to t('app.registered'), unsuscribe_quiniela_path(quiniela) ,method: :post
-        
-= link_to t('links.back'), quinielas_path
+%hr
+.button.radius.round        
+  = link_to t('links.back'), quinielas_path

@@ -1,40 +1,49 @@
 %h1= Quiniela.model_name.human
-
-%p
-  %b= Quiniela.human_attribute_name(:name)
-  = @quiniela.name
-%p
-  %b= Quiniela.human_attribute_name(:start_at)
-  = @quiniela.start_at
-%p
-  %b= Quiniela.human_attribute_name(:end_at)
-  = @quiniela.end_at
-%p
-  %b= Quiniela.human_attribute_name(:cost)
-  = @quiniela.cost
+.row
+  %fieldset
+    %legend
+      = t('app.quiniela_info')
+    .large-3.columns
+      %p
+        %b= Quiniela.human_attribute_name(:name)
+        = @quiniela.name
+    .large-3.columns
+      %p
+        %b= Quiniela.human_attribute_name(:start_at)
+        = @quiniela.start_at
+    .large-3.columns  
+      %p
+        %b= Quiniela.human_attribute_name(:end_at)
+        = @quiniela.end_at
+    .large-3.columns
+      %p
+        %b= Quiniela.human_attribute_name(:cost)
+        = @quiniela.cost
+%hr
 
 %h1= Game.model_name.human(count: 2)
   
 %table
   %tr
-    %th= Game.human_attribute_name(:local_id)
+    %th= Game.human_attribute_name(:local)
     %th
-    %th= Game.human_attribute_name(:visitor_id)
+    %th= Game.human_attribute_name(:visitor)
     %th= Game.human_attribute_name(:result)
   - @quiniela.games.each do |game|
     %tr
       %td= game.local_name
-      %td= t('app.versus')
+      %td= 'VS'
       %td= game.visitor_name
       %td= game.result
-      %br
+%hr
 
 %h1= t('app.registered_users')
 - @quiniela.users.each do |user|
-  = user.username
-  %br
+  %ul
+    = user.email
+%hr
+.button.radius.round
+  = link_to t('links.edit'), edit_admin_quiniela_path(@quiniela)
 
-%br
-= link_to t('links.edit'), edit_admin_quiniela_path(@quiniela)
-\|
-= link_to t('links.back'), admin_quinielas_path
+.button.radius.round
+  = link_to t('links.back'), admin_quinielas_path
