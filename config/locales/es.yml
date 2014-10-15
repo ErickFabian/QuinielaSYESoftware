@@ -18,6 +18,7 @@ es:
     quiniela_info: 'Informacion de la quiniela'
     current: 'Quinielas Proximas a empezar'
     user_quinielas: 'Mis quinielas'
+    dash_board: 'Dashboard'
 
   enums:
     result:
@@ -53,6 +54,7 @@ es:
         start_at: 'Fecha de Inicio'
         end_at: 'Fecha de Fin'
         cost: 'Costo'
+        date: 'Fecha de la Quiniela'
       user:
         username: 'Nombre'
         cellphone: 'Celular'
@@ -124,20 +126,22 @@ es:
       default: ! '%d/%m/%Y'
       long: ! '%A, %d de %B de %Y'
       short: ! '%d de %b'
+      exp1: '%d %B'
+      exp2: '%d %B %Y'
     month_names:
     -
-    - enero
-    - febrero
-    - marzo
-    - abril
-    - mayo
-    - junio
-    - julio
-    - agosto
-    - septiembre
-    - octubre
-    - noviembre
-    - diciembre
+    - Enero
+    - Febrero
+    - Marzo
+    - Abril
+    - Mayo
+    - Junio
+    - Julio
+    - Agosto
+    - Septiembre
+    - Octubre
+    - Noviembre
+    - Diciembre
     order:
     - :day
     - :month

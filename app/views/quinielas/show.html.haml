@@ -7,14 +7,10 @@
       %p
         %b= Quiniela.human_attribute_name(:name)
         = @quiniela.name
-    .large-3.columns
+    .large-6.columns
       %p
-        %b= Quiniela.human_attribute_name(:start_at)
-        = @quiniela.start_at
-    .large-3.columns  
-      %p
-        %b= Quiniela.human_attribute_name(:end_at)
-        = @quiniela.end_at
+        %b= Quiniela.human_attribute_name(:date)
+        = "#{I18n.l(@quiniela.start_at, format: :exp1)} - #{I18n.l(@quiniela.end_at, format: :exp2)}"
     .large-3.columns
       %p
         %b= Quiniela.human_attribute_name(:cost)
@@ -25,9 +21,9 @@
   
 %table
   %tr
-    %th= Game.human_attribute_name(:local)
+    %th= Game.human_attribute_name(:local_id)
     %th
-    %th= Game.human_attribute_name(:visitor)
+    %th= Game.human_attribute_name(:visitor_id)
     %th= Game.human_attribute_name(:result)
   - @quiniela.games.each do |game|
     %tr

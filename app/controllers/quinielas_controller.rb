@@ -12,12 +12,12 @@ class QuinielasController < ApplicationController
     if @quiniela.unsuscribed?(current_user)
       @quiniela.users << current_user
     end
-    redirect_to quinielas_path
+    redirect_to root_path
   end
 
   def unsuscribe
     @quiniela.users.delete(current_user)
-    redirect_to quinielas_path
+    redirect_to root_path
   end
 
   private
