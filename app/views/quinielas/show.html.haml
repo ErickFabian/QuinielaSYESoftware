@@ -30,7 +30,7 @@
       %td= game.local_name
       %td= 'VS'
       %td= game.visitor_name
-      %td= game.result
+      %td= t :"enums.result.#{game.result}"
 %hr
 
 %h1= t('app.registered_users')
