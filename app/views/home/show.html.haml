@@ -39,3 +39,19 @@
                   %td= link_to t('app.sign_up'), suscribe_quiniela_path(current) ,method: :post
                 -else
                   %td= link_to t('app.registered'), unsuscribe_quiniela_path(current) ,method: :post
+.row
+  %fieldset
+    %legend
+      = t('app.past_quinielas')
+    -if @past_quinielas
+      %table
+        %tr
+          %th= Quiniela.human_attribute_name(:name)
+          %th= Quiniela.human_attribute_name(:date)
+          %th= Quiniela.human_attribute_name(:cost)
+        -@past_quinielas.each do |past_quinielas|
+          %tr
+            %td= past_quinielas.name
+            %td= "#{I18n.l(past_quinielas.start_at, format: :exp1)} - #{I18n.l(past_quinielas.end_at, format: :exp2)}"
+            %td= past_quinielas.cost
+            %td= link_to t('app.show'), past_quinielas

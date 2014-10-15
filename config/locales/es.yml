@@ -18,6 +18,7 @@ es:
     quiniela_info: 'Informacion de la quiniela'
     current: 'Quinielas Proximas a empezar'
     user_quinielas: 'Mis quinielas'
+    past_quinielas: 'Quinielas pasadas'
     dash_board: 'Dashboard'
 
   enums:
