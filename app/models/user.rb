@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 
   as_enum :role, [:admin, :general], map: :string
 
+  validates_format_of :email,:with => Devise.email_regexp
+
   devise  :database_authenticatable,
           :registerable,
           :recoverable,
