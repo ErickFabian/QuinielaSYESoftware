@@ -1,10 +1,6 @@
 class QuinielasController < ApplicationController
   before_action :set_quiniela, only: [:show, :edit, :update, :destroy, :suscribe, :unsuscribe]
   
-  def index
-    @quinielas = Quiniela.all
-  end
-
   def show
   end
 

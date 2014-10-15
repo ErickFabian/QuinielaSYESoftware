@@ -1,60 +1,57 @@
 %h1= t('app.dash_board')
 %hr
 .row
-  .large-4.columns
-    .wrapper-user-quinielas
-      %fieldset
-        %legend
-          = t('app.user_quinielas')
-        -if @user_quinielas
-          %table
-            %tr
-              %th= Quiniela.human_attribute_name(:name)
-              %th= Quiniela.human_attribute_name(:date)
-              %th= Quiniela.human_attribute_name(:cost)
-            -@user_quinielas.each do |quiniela|
-              %tr
-                %td= quiniela.name
-                %td= "#{I18n.l(quiniela.start_at, format: :exp1)} - #{I18n.l(quiniela.end_at, format: :exp2)}"
-                %td= quiniela.cost
-  
-  .large-8.columns              
-    .wrapper-current-quinielas
-      %fieldset
-        %legend
-          = t('app.current')
-        -if @current
-          %table
-            %tr
-              %th= Quiniela.human_attribute_name(:name)
-              %th= Quiniela.human_attribute_name(:date)
-              %th= Quiniela.human_attribute_name(:cost)          
-              %th= t('app.show')
-              %th= t('app.sign_up')
-            -@current.each do |current|
-              %tr
-                %td= current.name
-                %td= "#{I18n.l(current.start_at, format: :exp1)} - #{I18n.l(current.end_at, format: :exp2)}"
-                %td= current.cost
-                %td= link_to t('app.show'), current
-                -if current.unsuscribed?(current_user)
-                  %td= link_to t('app.sign_up'), suscribe_quiniela_path(current) ,method: :post
-                -else
-                  %td= link_to t('app.registered'), unsuscribe_quiniela_path(current) ,method: :post
-%hr
-.row
-  %fieldset
-    %legend
-      = t('app.past_quinielas')
-    -if @past_quinielas
-      %table
-        %tr
-          %th= Quiniela.human_attribute_name(:name)
-          %th= Quiniela.human_attribute_name(:date)
-          %th= Quiniela.human_attribute_name(:cost)
-        -@past_quinielas.each do |past_quinielas|
+  .large-6.columns
+    %h1
+      = t('app.user_quinielas')
+      -if @user_active_quinielas
+        %table.quiniela-table
           %tr
-            %td= past_quinielas.name
-            %td= "#{I18n.l(past_quinielas.start_at, format: :exp1)} - #{I18n.l(past_quinielas.end_at, format: :exp2)}"
-            %td= past_quinielas.cost
-            %td= link_to t('app.show'), past_quinielas
+            %th= Quiniela.human_attribute_name(:name)
+            %th= Quiniela.human_attribute_name(:date)
+            %th= Quiniela.human_attribute_name(:cost)
+            %th
+          -@user_active_quinielas.each do |quiniela|
+            %tr
+              %td= quiniela.name
+              %td= "#{I18n.l(quiniela.start_at, format: :exp1)} - #{I18n.l(quiniela.end_at, format: :exp2)}"
+              %td= quiniela.cost
+              %td= link_to t('app.show'), quiniela
+              -if quiniela.suscribed?(current_user)
+                %td= link_to t('app.registered'), unsuscribe_quiniela_path(quiniela) ,method: :post
+    .row
+      .large-12.columns
+        %h1
+          = t('app.past_quinielas')
+          -if @user_inactive_quinielas
+            %table.quiniela-table
+              %tr
+                %th= Quiniela.human_attribute_name(:name)
+                %th= Quiniela.human_attribute_name(:date)
+                %th= Quiniela.human_attribute_name(:cost)
+              -@user_inactive_quinielas.each do |past_quinielas|
+                %tr
+                  %td= past_quinielas.name
+                  %td= "#{I18n.l(past_quinielas.start_at, format: :exp1)} - #{I18n.l(past_quinielas.end_at, format: :exp2)}"
+                  %td= past_quinielas.cost
+                  %td= link_to t('app.show'), past_quinielas
+
+  .large-6.columns
+    %h1
+      = t('app.current')
+      -if @active_quinielas
+        %table.quiniela-table
+          %tr
+            %th= Quiniela.human_attribute_name(:name)
+            %th= Quiniela.human_attribute_name(:date)
+            %th= Quiniela.human_attribute_name(:cost)
+            %th
+            %th
+          -@active_quinielas.each do |current|
+            %tr
+              %td= current.name
+              %td= "#{I18n.l(current.start_at, format: :exp1)} - #{I18n.l(current.end_at, format: :exp2)}"
+              %td= current.cost
+              %td= link_to t('app.show'), current
+              -if current.unsuscribed?(current_user)
+                %td= link_to t('app.sign_up'), suscribe_quiniela_path(current) ,method: :post

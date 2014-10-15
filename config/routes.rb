@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   
   resources :choices
-  resources :quinielas, only: [:index, :show, :suscribe] do
+  resources :quinielas, only: [:show] do
     member do 
       post :suscribe, :unsuscribe
     end

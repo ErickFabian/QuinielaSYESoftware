@@ -8,6 +8,9 @@ class Quiniela < ActiveRecord::Base
   accepts_nested_attributes_for :games, allow_destroy: true
   accepts_nested_attributes_for :users, allow_destroy: true
 
+  scope :active, -> { where('start_at >= ?', Date.today) } 
+  scope :inactive, -> { where('start_at < ?', Date.today) } 
+
   def suscribed?(user)
     users.include?(user)
   end
