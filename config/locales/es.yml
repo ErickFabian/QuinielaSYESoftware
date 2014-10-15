@@ -23,6 +23,7 @@ es:
 
   enums:
     result:
+      in_progress: 'Por Empezar'
       draw: 'Empate'
       local: 'Local'
       visitor: 'Visitante'

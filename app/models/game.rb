@@ -8,5 +8,5 @@ class Game < ActiveRecord::Base
   delegate :name, to: :local, prefix: true
   delegate :name, to: :visitor, prefix: true
 
-  as_enum :result, draw: 0, local: 1, visitor: 2
+  as_enum :result, in_progress: -1, draw: 0, local: 1, visitor: 2
 end
